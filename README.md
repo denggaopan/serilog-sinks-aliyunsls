@@ -14,21 +14,12 @@ builder.Host.UseSerilog();
 edit config
 ```
 "Serilog": {
-    "Using": [ "Serilog.Enrichers.ClientInfo", "Serilog.Expressions" ],
     "MinimumLevel": {
       "Default": "Information",
       "Override": {
         "Microsoft.Hosting.Lifetime": "Information"
       }
     },
-    "Filter": [
-      {
-        "Name": "ByExcluding",
-        "Args": {
-          "expression": "RequestPath like '/health%'"
-        }
-      }
-    ],
     "WriteTo": [
       {
         "Name": "Console"
@@ -50,7 +41,7 @@ edit config
         }
       }
     ],
-    "Enrich": [ "FromLogContext", "WithClientIp" ]
+    "Enrich": ["FromLogContext"]
   }
   ```
 # step 4
