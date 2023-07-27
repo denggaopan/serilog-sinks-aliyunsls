@@ -1,5 +1,7 @@
 # step 1
+```
 Install-Package Serilog.Sinks.AliyunSls
+```
 # step 2
 add services
 ```
@@ -33,7 +35,9 @@ edit config
           "Topic": "",
           "BatchSizeLimit": 1000,
           "Period": 2,
-          "QueueLimit": 100000
+          "QueueLimit": 100000,
+          "EagerlyEmitFirstEvent": true,
+          "EnableBatch": true
         }
       }
     ],
