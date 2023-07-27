@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Serilog</RootNamespace>
+        <LangVersion>default</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>aliyun sls sdk for serilog sinks, support batch emit</Description>
+        <PackageProjectUrl>https://github.com/denggaopan/serilog-sinks-aliyunsls</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/denggaopan/serilog-sinks-aliyunsls</RepositoryUrl>
+        <PackageTags>Serilog,Sinks,Aliyun,SLS,Log</PackageTags>
+        <Authors>denggaopan</Authors>
+        <RepositoryType>Public</RepositoryType>
+        <PackageVersion>2.0.1</PackageVersion>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <Version>2.0.1</Version>
+        <Title>Serilog.Sinks.AliyunSls</Title>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Aliyun.SLS.SDK" Version="1.1.1" />
+      <PackageReference Include="Serilog" Version="2.12.0" />
+      <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="3.1.0" />
+    </ItemGroup>
+
+</Project>

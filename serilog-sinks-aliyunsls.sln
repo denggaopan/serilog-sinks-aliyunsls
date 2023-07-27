@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.AliyunSls.Demo", "Serilog.Sinks.AliyunSls.Demo\Serilog.Sinks.AliyunSls.Demo.csproj", "{A153BDF4-EE38-4367-9DCE-F1D31C785773}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.AliyunSls", "Serilog.Sinks.AliyunSls\Serilog.Sinks.AliyunSls.csproj", "{A9AC1634-2CBA-4CA1-A2DE-163569C9EF8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A153BDF4-EE38-4367-9DCE-F1D31C785773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A153BDF4-EE38-4367-9DCE-F1D31C785773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A153BDF4-EE38-4367-9DCE-F1D31C785773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A153BDF4-EE38-4367-9DCE-F1D31C785773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AC1634-2CBA-4CA1-A2DE-163569C9EF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AC1634-2CBA-4CA1-A2DE-163569C9EF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AC1634-2CBA-4CA1-A2DE-163569C9EF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AC1634-2CBA-4CA1-A2DE-163569C9EF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECAFAD07-6555-4D40-81EA-1FE223E4C3C0}
+	EndGlobalSection
+EndGlobal
