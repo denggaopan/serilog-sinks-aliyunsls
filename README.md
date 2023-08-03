@@ -41,7 +41,7 @@ edit config
         }
       }
     ],
-    "Enrich": [ "FromLogContext"]
+    "Enrich": ["FromLogContext"]
   }
   ```
 # step 4
