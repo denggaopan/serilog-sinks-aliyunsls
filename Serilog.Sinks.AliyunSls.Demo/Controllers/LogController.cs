@@ -15,9 +15,15 @@ namespace Serilog.Sinks.AliyunSls.Demo.Controllers
         }
 
         [HttpGet]
-        public void WriteAsync(LogLevel level,string content )
+        public void Write(LogLevel level,string content )
         {
             _logger.Log(level, content);
+        }
+
+        [HttpGet("exception")]
+        public void Exception(string content)
+        {
+            throw new Exception(content);
         }
     }
 }

@@ -67,6 +67,10 @@ namespace Serilog.Sinks.AliyunSls.Batch
                     { "Level", logEvent.Level.ToString() },
                     { "Message", logEvent.RenderMessage() }
                 };
+                if(logEvent.Exception != null)
+                {
+                    contents.Add("Exception", logEvent.Exception.ToString());
+                }
                 foreach (var prop in logEvent.Properties)
                 {
                     contents.Add(prop.Key, prop.Value.ToString().Trim('"'));

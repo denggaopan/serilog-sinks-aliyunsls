@@ -51,9 +51,15 @@ namespace Serilog.Sinks.AliyunSls.Audit
         public async Task EmitAsync(LogEvent logEvent)
         {
             //contents
-            var contents = new Dictionary<string, string>();
-            contents["Level"] = logEvent.Level.ToString();
-            contents["Message"] = logEvent.RenderMessage();
+            var contents = new Dictionary<string, string>
+            {
+                ["Level"] = logEvent.Level.ToString(),
+                ["Message"] = logEvent.RenderMessage()
+            };
+            if (logEvent.Exception != null)
+            {
+                contents.Add("Exception", logEvent.Exception.ToString());
+            }
             foreach (var prop in logEvent.Properties)
             {
                 contents.Add(prop.Key, prop.Value.ToString().Trim('"'));
