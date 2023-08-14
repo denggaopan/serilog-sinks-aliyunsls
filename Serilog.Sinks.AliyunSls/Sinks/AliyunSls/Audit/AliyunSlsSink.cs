@@ -14,7 +14,6 @@ namespace Serilog.Sinks.AliyunSls.Audit
 
         public AliyunSlsSink(AliyunSlsOption option)
         {
-
             if (string.IsNullOrWhiteSpace(option.AccessKeyId))
             {
                 throw new ArgumentNullException(nameof(option.AccessKeyId));
@@ -60,6 +59,7 @@ namespace Serilog.Sinks.AliyunSls.Audit
             {
                 contents.Add("Exception", logEvent.Exception.ToString());
             }
+
             foreach (var prop in logEvent.Properties)
             {
                 contents.Add(prop.Key, prop.Value.ToString().Trim('"'));
@@ -68,13 +68,13 @@ namespace Serilog.Sinks.AliyunSls.Audit
             var request = new PostLogsRequest(Option.LogStore, new LogGroupInfo()
             {
                 Logs = new List<LogInfo>
-            {
-                new()
                 {
-                    Time = DateTime.Now,
-                    Contents = contents
-                }
-            },
+                    new()
+                    {
+                        Time = DateTimeOffset.UtcNow,
+                        Contents = contents
+                    }
+                },
                 Topic = Option.Topic ?? "",
             });
 
