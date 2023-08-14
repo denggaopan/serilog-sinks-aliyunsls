@@ -20,21 +20,23 @@ namespace Serilog.Sinks.AliyunSls.Batch
             {
                 throw new ArgumentNullException(nameof(option.AccessKeyId));
             }
+
             if (string.IsNullOrWhiteSpace(option.AccessKeySecret))
             {
                 throw new ArgumentNullException(nameof(option.AccessKeySecret));
             }
+
             if (string.IsNullOrWhiteSpace(option.Project))
             {
                 throw new ArgumentNullException(option.Project);
             }
+
             if (string.IsNullOrWhiteSpace(option.LogStore))
             {
                 throw new ArgumentNullException(option.LogStore);
             }
 
             this.option = option;
-            
         }
 
         private HttpLogServiceClient ClientInstance
@@ -44,10 +46,11 @@ namespace Serilog.Sinks.AliyunSls.Batch
                 if (client == null)
                 {
                     client = LogServiceClientBuilders.HttpBuilder
-                    .Endpoint(option.Endpoint, option.Project)
-                    .Credential(option.AccessKeyId, option.AccessKeySecret)
-                    .Build();
+                        .Endpoint(option.Endpoint, option.Project)
+                        .Credential(option.AccessKeyId, option.AccessKeySecret)
+                        .Build();
                 }
+
                 return client;
             }
         }
@@ -67,21 +70,23 @@ namespace Serilog.Sinks.AliyunSls.Batch
                     { "Level", logEvent.Level.ToString() },
                     { "Message", logEvent.RenderMessage() }
                 };
-                if(logEvent.Exception != null)
+                if (logEvent.Exception != null)
                 {
                     contents.Add("Exception", logEvent.Exception.ToString());
                 }
+
                 foreach (var prop in logEvent.Properties)
                 {
                     contents.Add(prop.Key, prop.Value.ToString().Trim('"'));
                 }
+
                 logs.Add(new()
                 {
-                    Time = DateTime.Now,
+                    Time = DateTimeOffset.UtcNow,
                     Contents = contents
                 });
-
             }
+
             var request = new PostLogsRequest(option.LogStore, new LogGroupInfo()
             {
                 Logs = logs,

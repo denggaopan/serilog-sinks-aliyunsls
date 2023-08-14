@@ -6,7 +6,6 @@ namespace Serilog.Sinks.AliyunSls.Demo.Controllers
     [ApiController]
     public class LogController : ControllerBase
     {
-
         private readonly ILogger<LogController> _logger;
 
         public LogController(ILogger<LogController> logger)
@@ -15,7 +14,7 @@ namespace Serilog.Sinks.AliyunSls.Demo.Controllers
         }
 
         [HttpGet]
-        public void Write(LogLevel level,string content )
+        public void Write(LogLevel level, string content)
         {
             _logger.Log(level, content);
         }
